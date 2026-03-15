@@ -14,7 +14,8 @@ A suite of interconnected web apps under **JondriDev** — all sharing one desig
 |---------|--------|------|
 | 💰 **Finance Tracker** | ✅ Live | [jondridev.github.io/finance-tracker](https://jondridev.github.io/finance-tracker) |
 | 📖 **Kamus** (English Dictionary) | ✅ Live | [jondridev.github.io/kamus](https://jondridev.github.io/kamus) |
-| 🧠 **Vocab Tracker** | 🔜 Building | — |
+| 🧠 **Vocab Tracker** | ✅️ Live | [jondridev.github.io/vocab-tracker]
+(https://jondridev.github.io/vocab-tracker)
 | 📄 **File Reader** | 🔜 Planned | — |
 | ⚡ **Habit Tracker** | 🔜 Planned | — |
 
