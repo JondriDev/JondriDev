@@ -1,8 +1,7 @@
 # Hi, I'm Jondri 👋
 
 **Self-taught developer from Indonesia 🇮🇩**  
-Building a full app ecosystem — one project at a time.  
-19 years old. Mobile-only setup. No excuses.
+Build a Software Empire 
 
 ---
 
@@ -32,14 +31,13 @@ A suite of interconnected web apps under **JondriDev** — all sharing one desig
 
 ## 🎯 2026 Goal
 
-Land a **remote developer job** within 12 months — building real products, learning in public, shipping constantly.
+Building real products, shipping constantly, all apps deployed.
 
 ---
 
-## 📱 My Setup
+## Setup
 
-> Built everything on a **Samsung Tab S9 FE** using Termux + Spck Editor.  
-> No MacBook. No excuses. Just code.
+> Built everything on a **Samsung Tab S9 FE** Termux + Spck Editor.
 
 ---
 
