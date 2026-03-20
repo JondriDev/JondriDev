@@ -1,7 +1,7 @@
 # Hi, I'm Jondri 👋
 
 **Self-taught developer from Indonesia 🇮🇩**  
-Build a Software Empire 
+**Build a Software Empire**
 
 ---
 
@@ -31,13 +31,13 @@ A suite of interconnected web apps under **JondriDev** — all sharing one desig
 
 ## 🎯 2026 Goal
 
-Building real products, shipping constantly, all apps deployed.
+All apps deployed.
 
 ---
 
 ## Setup
 
-> Built everything on a **Samsung Tab S9 FE** Termux + Spck Editor.
+> Built everything on a **Samsung Tab S9 FE** AI-Assisted + Spck Editor + Termux.
 
 ---
 
