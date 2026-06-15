@@ -19,7 +19,7 @@ A suite of interconnected apps under **JondriDev** — all sharing one design sy
 
 ### 📟 [Mesin](https://github.com/JondriDev/mesin) — Android Terminal Emulator
 
-A full-featured terminal emulator for Android, built from first principles. No wrapper libraries — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas-based cell renderer, 256-color + true color support, scrollback buffer, and extra keys bar. Written in Kotlin + C.
+A full-featured terminal emulator for Android, built from first principles. No wrapper libraries — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas-based cell renderer, 256-color + true color support, scrollback buffer, and extra keys bar. Privacy-first: zero network permissions, zero analytics, zero tracking, all data stays on-device. Written in Kotlin + C.
 
 **Status**: In development · [Download APK from CI](https://github.com/JondriDev/mesin/actions)
 
