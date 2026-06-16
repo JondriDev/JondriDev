@@ -1,0 +1,51 @@
+name: Deploy Pages
+
+# Publishes the ecosystem landing page. This is the profile repo (named after
+# the user), so Pages serves it as a PROJECT site at:
+#   https://jondridev.github.io/JondriDev/
+# (the account-root URL would require a repo named jondridev.github.io).
+# The profile README.md is excluded from the site and stays on your profile.
+# One-time: Settings → Pages → Source → "GitHub Actions".
+
+on:
+  push:
+    # This user/site repo's current default branch is the portfolio-readme branch;
+    # list both so a merge deploys whether or not `main` exists yet.
+    branches: [ main, claude/create-portfolio-readme-HWsAW ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🧹 Stage site (index + icons)
+        run: |
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' --exclude='README.md' ./ _site/
+
+      - name: ⚙️ Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
