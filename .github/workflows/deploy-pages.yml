@@ -6,7 +6,9 @@ name: Deploy Pages
 
 on:
   push:
-    branches: [ main ]
+    # This user/site repo's current default branch is the portfolio-readme branch;
+    # list both so a merge deploys whether or not `main` exists yet.
+    branches: [ main, claude/create-portfolio-readme-HWsAW ]
   workflow_dispatch:
 
 permissions:
