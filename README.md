@@ -1,34 +1,72 @@
 # Hi, I'm Jondri 👋
 
-**I'm from Indonesia 🇮🇩**
-— **Building a Software Empire** 🏰
+**From Indonesia 🇮🇩 — building a software empire that doesn't look like it's from here.**
 
 ---
 
 ## 🧑‍💻 About
 
-I'm 19, based in Central Borneo.
+I'm 19, based in Central Borneo, working toward a remote developer career.
 
-Working toward a remote developer career.
+I build a suite of **interconnected apps** under **JondriDev** — all sharing
+**one account, one mesh, one design language**.
+
+That design language is **XENO**: a first-contact interface. Deep-field void,
+bioluminescent signals, holographic glass — futuristic, minimal, alien.
 
 ---
 
-## 🚀 What I'm Building
+## 🛰️ The Ecosystem
 
-A suite of interconnected apps under **JondriDev** — all sharing one design system, one account, one cloud backend.
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#070d1c','primaryBorderColor':'#34f5d6','primaryTextColor':'#d6fbf4','lineColor':'#34f5d6','fontFamily':'monospace'}}}%%
+graph TD
+  CORE(("◎ CORE<br/>one account · one cloud"))
+  CORE --- DS["🎨 XENO<br/>design system"]
+  CORE --- AAI["🇮🇩 Aplikasi AI<br/>26-app super app"]
+  CORE --- MSN["📟 Mesin<br/>terminal emulator"]
+  AAI --- CKR["🜂 Cakra<br/>AI agent"]
+  AAI --- HUB["📡 Pusat Data<br/>local cloud · Termux"]
+  DS -. tokens .-> AAI
+  DS -. palette .-> MSN
+```
 
-### 📟 [Mesin](https://github.com/JondriDev/mesin) — Android Terminal Emulator
+Every node speaks the same visual language and reports to the same core. The
+design system is the single source of truth — its tokens flow into the Flutter
+app and its palette into the terminal.
 
-A full-featured terminal emulator for Android, built from first principles. No wrapper libraries — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas-based cell renderer, 256-color + true color support, scrollback buffer, and extra keys bar. Written in Kotlin + C.
+---
 
-**Status**: In development · [Download APK from CI](https://github.com/JondriDev/mesin/actions)
+## 📦 Nodes
+
+| Node | What it is | Stack | Status |
+|------|-----------|-------|--------|
+| 🎨 **[XENO Design System](https://github.com/JondriDev/design-system)** | First-contact design language — deep-field palette, holographic glass, a living network. The source of truth for every app. | HTML · CSS · Canvas | **Live** |
+| 🇮🇩 **[Aplikasi AI Indonesia](https://github.com/JondriDev/aplikasi-ai-indonesia)** | 26 AI-powered apps in one Android super-app — finance, dictionary, vocab, calendar, notes, messaging, AI agent, and more. | Flutter · SQLite | In development |
+| 📟 **[Mesin](https://github.com/JondriDev/mesin)** | A terminal emulator built from first principles — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas cell renderer, 256-color + true color. | Kotlin · C | In development |
+| 🜂 **Cakra** | The in-app AI agent (OpenManus / NVIDIA NIM backend), reachable from the super-app over the local mesh. | Dart · SSE | Prototype |
+
+> Build artifacts (APKs) ship from each repo's **Actions** tab.
+
+---
+
+## 🎨 XENO — the design language
+
+- **Deep-Field palette** — a void backdrop with bioluminescent signals:
+  `signal #34F5D6` · `aurora #5CF0A8` · `plasma #B06BFF` · `ion #4D9BFF` · `ember #FF9B6B`
+- **Holographic glass** — near-invisible surfaces, hairline signal rims, a faint scanline texture
+- **Living network** — a drifting constellation mesh behind everything; the ecosystem made literal
+- **Bilingual** — English / Bahasa Indonesia · **Dark "Void" + light "Daylight Survey"**
+
+The full system is a single self-contained page → **[open the design system](https://github.com/JondriDev/design-system)**
 
 ---
 
 ## 🛠️ Stack
 
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=flat&logo=android&logoColor=white)
 ![C](https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=black)
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css&logoColor=white)
@@ -48,3 +86,5 @@ A full-featured terminal emulator for Android, built from first principles. No w
 ## 🎯 2026 Goal
 
 Deploy the full ecosystem. Get hired remotely.
+
+> *One account. One mesh. Many instruments.*
