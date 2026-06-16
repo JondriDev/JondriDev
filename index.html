@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#03060E">
+  <meta name="description" content="JondriDev — a first-contact interface for an ecosystem of mobile-first apps, now fully on the web. XENO: deep-field void, bioluminescent signals, holographic glass. One account · one mesh · many instruments.">
+  <meta property="og:title" content="JondriDev · XENO">
+  <meta property="og:description" content="One account · one mesh · many instruments. The JondriDev ecosystem — design system, 26-app super-app, terminal — all on the web.">
+  <meta property="og:type" content="website">
+  <title>JondriDev · XENO</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --void:#03060E; --abyss:#070D1C;
+      --signal:#34F5D6; --aurora:#5CF0A8; --plasma:#B06BFF; --ion:#4D9BFF; --ember:#FF9B6B;
+      --xenon:#D6FBF4; --text:#DCE8F2; --text2:#7A98B4; --text3:#32465E;
+      --hair:rgba(120,200,224,.14);
+      --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+      --display:'Sora',system-ui,sans-serif;
+    }
+    * { box-sizing:border-box; }
+    html,body { margin:0; min-height:100%; background:var(--void); }
+    body {
+      color:var(--text); font-family:var(--display);
+      -webkit-font-smoothing:antialiased; overflow-x:hidden; position:relative;
+    }
+    #field { position:fixed; inset:0; z-index:0; display:block; }
+    .veil {
+      position:fixed; inset:0; z-index:1; pointer-events:none;
+      background:
+        radial-gradient(1200px 820px at 50% -16%, rgba(52,245,214,.16), transparent 60%),
+        radial-gradient(960px 760px at 112% 6%, rgba(77,155,255,.13), transparent 60%),
+        radial-gradient(900px 760px at -12% 64%, rgba(176,107,255,.12), transparent 62%);
+    }
+    .wrap { position:relative; z-index:2; max-width:1080px; margin:0 auto; padding:clamp(28px,6vw,72px) clamp(18px,4vw,28px) 56px; }
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    .hero { text-align:center; margin-bottom:clamp(34px,6vw,64px); }
+    .core {
+      font-size:clamp(40px,8vw,58px); color:var(--signal); line-height:1;
+      text-shadow:0 0 36px rgba(52,245,214,.65); margin-bottom:14px;
+      animation:pulse 4.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{ text-shadow:0 0 30px rgba(52,245,214,.5);} 50%{ text-shadow:0 0 48px rgba(52,245,214,.85);} }
+    h1 {
+      font-size:clamp(34px,7vw,60px); font-weight:800; letter-spacing:.02em; margin:0;
+      color:var(--xenon); text-shadow:0 0 40px rgba(52,245,214,.25);
+    }
+    .tagline {
+      font-family:var(--mono); font-size:clamp(11px,2.4vw,13px); letter-spacing:.34em;
+      text-transform:uppercase; color:var(--signal); margin:16px 0 0;
+    }
+    .tagline .dot { color:var(--text3); }
+    .lede {
+      max-width:62ch; margin:20px auto 0; color:var(--text2); line-height:1.75;
+      font-size:clamp(14px,2.5vw,16px);
+    }
+    .lede b { color:var(--xenon); font-weight:700; letter-spacing:.04em; }
+    .pills { display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin-top:26px; }
+    .pill {
+      font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--text2); border:1px solid var(--hair); border-radius:999px; padding:6px 12px;
+      display:inline-flex; align-items:center; gap:7px; background:rgba(52,245,214,.04);
+    }
+    .pill::before { content:""; width:6px; height:6px; border-radius:50%; background:var(--c,var(--signal)); box-shadow:0 0 8px var(--c,var(--signal)); }
+
+    /* ── Holographic glass ────────────────────────────────── */
+    .holo {
+      position:relative; overflow:hidden; border-radius:18px; border:1px solid var(--hair);
+      background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 9%, transparent), rgba(28,58,74,.10) 46%, rgba(3,6,14,.32)), rgba(7,13,28,.42);
+      backdrop-filter:blur(16px) saturate(120%); -webkit-backdrop-filter:blur(16px) saturate(120%);
+      box-shadow:inset 1px 1px 0 color-mix(in srgb, var(--accent) 22%, transparent),
+                 inset -1px -1px 0 rgba(3,6,14,.6), 0 24px 60px -30px rgba(0,0,0,.85);
+    }
+    .holo::after {
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.4;
+      background:repeating-linear-gradient(0deg, rgba(120,200,224,.05) 0 1px, transparent 1px 3px);
+      mix-blend-mode:overlay;
+    }
+
+    /* ── Node grid ────────────────────────────────────────── */
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(14px,2.4vw,20px); }
+    .node {
+      --accent:var(--signal);
+      display:flex; flex-direction:column; gap:12px; padding:22px; text-decoration:none; color:inherit;
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    a.node:hover {
+      transform:translateY(-4px);
+      border-color:color-mix(in srgb, var(--accent) 45%, transparent);
+      box-shadow:inset 1px 1px 0 color-mix(in srgb, var(--accent) 30%, transparent),
+                 inset -1px -1px 0 rgba(3,6,14,.6), 0 30px 70px -30px rgba(0,0,0,.9),
+                 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+    .node-top { display:flex; align-items:center; justify-content:space-between; }
+    .node .icon {
+      font-size:24px; width:46px; height:46px; display:grid; place-items:center; border-radius:13px;
+      background:color-mix(in srgb, var(--accent) 12%, transparent);
+      border:1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      box-shadow:0 0 22px -6px var(--accent);
+    }
+    .status {
+      font-family:var(--mono); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+      color:var(--accent); border:1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+      border-radius:999px; padding:4px 9px; display:inline-flex; align-items:center; gap:6px;
+    }
+    .status::before { content:""; width:5px; height:5px; border-radius:50%; background:var(--accent); box-shadow:0 0 7px var(--accent); }
+    .node h2 { margin:2px 0 0; font-size:18px; font-weight:700; color:var(--xenon); letter-spacing:.01em; }
+    .node .sub { margin:0; font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--accent); opacity:.9; }
+    .node .desc { margin:0; color:var(--text2); line-height:1.65; font-size:13.5px; flex:1; }
+    .node .tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .node .tags span {
+      font-family:var(--mono); font-size:10px; letter-spacing:.05em; color:var(--text2);
+      border:1px solid var(--hair); border-radius:7px; padding:3px 7px; background:rgba(255,255,255,.015);
+    }
+    .node .cta {
+      font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--accent);
+      margin-top:2px; display:inline-flex; align-items:center; gap:6px;
+    }
+    a.node:hover .cta { text-shadow:0 0 14px color-mix(in srgb, var(--accent) 60%, transparent); }
+    .node.soon { opacity:.86; }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    .foot {
+      margin-top:clamp(40px,7vw,70px); padding-top:22px; border-top:1px solid var(--hair);
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
+      font-family:var(--mono); font-size:11.5px; color:var(--text3);
+    }
+    .foot a { color:var(--text2); text-decoration:none; transition:color .18s; }
+    .foot a:hover { color:var(--signal); }
+    .foot .who { color:var(--text2); }
+
+    @media (prefers-reduced-motion: reduce) { .core { animation:none; } }
+  </style>
+</head>
+<body>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="core">◎</div>
+      <h1>JondriDev</h1>
+      <p class="tagline">One&nbsp;account <span class="dot">·</span> one&nbsp;mesh <span class="dot">·</span> many&nbsp;instruments</p>
+      <p class="lede">
+        A first-contact interface for an ecosystem of mobile-first apps — built from
+        Central Borneo, now <b>fully on the web</b>. <b>XENO</b> is the shared language:
+        deep-field void, bioluminescent signals, holographic glass.
+      </p>
+      <div class="pills">
+        <span class="pill" style="--c:var(--signal)">Deep&nbsp;Field</span>
+        <span class="pill" style="--c:var(--aurora)">EN&nbsp;/&nbsp;ID</span>
+        <span class="pill" style="--c:var(--ion)">Web&nbsp;·&nbsp;PWA</span>
+        <span class="pill" style="--c:var(--plasma)">2026&nbsp;·&nbsp;Live</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <a class="node holo" style="--accent:var(--signal)" href="https://jondridev.github.io/design-system/">
+        <div class="node-top">
+          <span class="icon">🎨</span>
+          <span class="status">Live</span>
+        </div>
+        <h2>XENO Design System</h2>
+        <p class="sub">Sistem desain · first-contact</p>
+        <p class="desc">The single source of truth — Deep Field palette, holographic glass, type scale, and the living network. Every app inherits it.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>Canvas</span></div>
+        <span class="cta">open the system →</span>
+      </a>
+
+      <a class="node holo" style="--accent:var(--aurora)" href="https://jondridev.github.io/aplikasi-ai-indonesia/">
+        <div class="node-top">
+          <span class="icon">🇮🇩</span>
+          <span class="status">Web&nbsp;build</span>
+        </div>
+        <h2>Aplikasi AI Indonesia</h2>
+        <p class="sub">26-app super-app · Flutter</p>
+        <p class="desc">Finance, dictionary, vocab, calendar, notes, messaging and more — 26 apps in one. SQLite runs in the browser; data stays local.</p>
+        <div class="tags"><span>Flutter</span><span>Dart</span><span>SQLite·WASM</span></div>
+        <span class="cta">launch the app →</span>
+      </a>
+
+      <a class="node holo" style="--accent:var(--ion)" href="https://jondridev.github.io/mesin/">
+        <div class="node-top">
+          <span class="icon">📟</span>
+          <span class="status">Web&nbsp;demo</span>
+        </div>
+        <h2>Mesin</h2>
+        <p class="sub">Terminal · mesin-sh</p>
+        <p class="desc">A terminal built from first principles. The native build is Kotlin&nbsp;+&nbsp;C over a real PTY; this web demo reuses the VT100 renderer with a simulated shell.</p>
+        <div class="tags"><span>Canvas</span><span>VT100/ANSI</span><span>JS</span></div>
+        <span class="cta">open the terminal →</span>
+      </a>
+
+      <a class="node holo soon" style="--accent:var(--plasma)" href="https://github.com/JondriDev">
+        <div class="node-top">
+          <span class="icon">🜂</span>
+          <span class="status">Prototype</span>
+        </div>
+        <h2>Cakra</h2>
+        <p class="sub">AI agent · in-app</p>
+        <p class="desc">The in-app AI agent reachable over the local mesh (OpenManus&nbsp;/&nbsp;NVIDIA&nbsp;NIM). Wired into the super-app; surfacing on the web next.</p>
+        <div class="tags"><span>Dart</span><span>SSE</span><span>Agent</span></div>
+        <span class="cta">follow on GitHub →</span>
+      </a>
+    </section>
+
+    <footer class="foot">
+      <span class="who">From Indonesia 🇮🇩 — building a software empire.</span>
+      <span><a href="https://github.com/JondriDev">github.com/JondriDev</a> · <span style="color:var(--text3)">© 2026 · One mesh.</span></span>
+    </footer>
+  </div>
+
+  <script>
+    // The living network — starfield + a drifting node mesh that links nearby
+    // nodes, the same motif as the design system. Honors reduced-motion.
+    (function () {
+      var canvas = document.getElementById('field');
+      var ctx = canvas.getContext('2d');
+      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var W = 0, H = 0, stars = [], nodes = [], t0 = performance.now();
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+      function seed() {
+        stars = []; nodes = [];
+        var area = (W * H) / (dpr * dpr);
+        var nStars = Math.min(150, Math.round(area / 9000));
+        var nNodes = Math.min(26, Math.round(area / 42000));
+        for (var i = 0; i < nStars; i++)
+          stars.push({ x: Math.random(), y: Math.random(), r: rand(0.3, 1.3), p: rand(0, 6.28), s: rand(0.3, 1.6) });
+        for (var j = 0; j < nNodes; j++)
+          nodes.push({ x: Math.random(), y: Math.random(), vx: rand(-0.012, 0.012), vy: rand(-0.012, 0.012), plasma: Math.random() < 0.22 });
+      }
+      function resize() {
+        W = canvas.width = Math.floor(innerWidth * dpr);
+        H = canvas.height = Math.floor(innerHeight * dpr);
+        canvas.style.width = innerWidth + 'px';
+        canvas.style.height = innerHeight + 'px';
+        seed();
+        if (reduce) draw(0);
+      }
+      function draw(now) {
+        var t = (now - t0) / 1000;
+        ctx.clearRect(0, 0, W, H);
+        ctx.fillStyle = '#03060E'; ctx.fillRect(0, 0, W, H);
+
+        for (var i = 0; i < stars.length; i++) {
+          var st = stars[i];
+          var tw = 0.5 + 0.5 * Math.sin(st.p + t * st.s);
+          ctx.globalAlpha = 0.12 + tw * 0.5;
+          ctx.fillStyle = tw > 0.9 ? '#D6FBF4' : '#7FB6CF';
+          ctx.beginPath(); ctx.arc(st.x * W, st.y * H, st.r * dpr, 0, 6.2832); ctx.fill();
+        }
+
+        var pos = [];
+        for (var n = 0; n < nodes.length; n++) {
+          var nd = nodes[n];
+          var nx = ((nd.x + nd.vx * t) % 1 + 1) % 1;
+          var ny = ((nd.y + nd.vy * t) % 1 + 1) % 1;
+          pos.push([nx * W, ny * H]);
+        }
+        var maxd = 150 * dpr;
+        ctx.lineWidth = 0.7 * dpr;
+        for (var a = 0; a < pos.length; a++) {
+          for (var b = a + 1; b < pos.length; b++) {
+            var dx = pos[a][0] - pos[b][0], dy = pos[a][1] - pos[b][1];
+            var d = Math.hypot(dx, dy);
+            if (d < maxd) {
+              ctx.globalAlpha = (1 - d / maxd) * 0.18;
+              ctx.strokeStyle = (nodes[a].plasma || nodes[b].plasma) ? '#B06BFF' : '#34F5D6';
+              ctx.beginPath(); ctx.moveTo(pos[a][0], pos[a][1]); ctx.lineTo(pos[b][0], pos[b][1]); ctx.stroke();
+            }
+          }
+        }
+        for (var k = 0; k < pos.length; k++) {
+          var col = nodes[k].plasma ? '#B06BFF' : '#34F5D6';
+          ctx.globalAlpha = 0.9; ctx.fillStyle = col;
+          ctx.beginPath(); ctx.arc(pos[k][0], pos[k][1], 1.7 * dpr, 0, 6.2832); ctx.fill();
+          ctx.globalAlpha = 0.13;
+          ctx.beginPath(); ctx.arc(pos[k][0], pos[k][1], 5 * dpr, 0, 6.2832); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+        if (!reduce) requestAnimationFrame(draw);
+      }
+
+      addEventListener('resize', resize);
+      resize();
+      if (!reduce) requestAnimationFrame(draw);
+    })();
+  </script>
+</body>
+</html>
