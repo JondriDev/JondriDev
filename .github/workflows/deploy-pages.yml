@@ -1,7 +1,10 @@
 name: Deploy Pages
 
-# Publishes the ecosystem landing page to https://jondridev.github.io/
-# (this repo is the GitHub user/site repo). The profile README.md is unaffected.
+# Publishes the ecosystem landing page. This is the profile repo (named after
+# the user), so Pages serves it as a PROJECT site at:
+#   https://jondridev.github.io/JondriDev/
+# (the account-root URL would require a repo named jondridev.github.io).
+# The profile README.md is excluded from the site and stays on your profile.
 # One-time: Settings → Pages → Source → "GitHub Actions".
 
 on:
