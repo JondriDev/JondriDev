@@ -22,18 +22,18 @@ bioluminescent signals, holographic glass — futuristic, minimal, alien.
 %%{init: {'theme':'base','themeVariables':{'primaryColor':'#070d1c','primaryBorderColor':'#34f5d6','primaryTextColor':'#d6fbf4','lineColor':'#34f5d6','fontFamily':'monospace'}}}%%
 graph TD
   CORE(("◎ CORE<br/>one account · one cloud"))
+  CORE --- EMP["⬡ The Empire<br/>26-instrument web app"]
   CORE --- DS["🎨 XENO<br/>design system"]
-  CORE --- AAI["🇮🇩 Aplikasi AI<br/>26-app super app"]
   CORE --- MSN["📟 Mesin<br/>terminal emulator"]
-  AAI --- CKR["🜂 Cakra<br/>AI agent"]
-  AAI --- HUB["📡 Pusat Data<br/>local cloud · Termux"]
-  DS -. tokens .-> AAI
+  EMP --- CKR["🜂 Cakra<br/>AI agent"]
+  EMP --- HUB["📡 Pusat Data<br/>local cloud · Termux"]
+  DS -. tokens .-> EMP
   DS -. palette .-> MSN
 ```
 
 Every node speaks the same visual language and reports to the same core. The
-design system is the single source of truth — its tokens flow into the Flutter
-app and its palette into the terminal.
+design system is the single source of truth — its tokens are vendored 1:1 into
+**The Empire** web app and its palette into the terminal.
 
 ---
 
@@ -41,9 +41,10 @@ app and its palette into the terminal.
 
 | Node | What it is | Stack | Status |
 |------|-----------|-------|--------|
+| ⬡ **[The Empire](https://github.com/JondriDev/the-empire)** | The flagship — 26 instruments in one self-contained web super-app. Finance, notes, terminal, calendar, AI tools and more, wired into one mesh; data stays on-device. | HTML · CSS · JS | **Live** |
 | 🎨 **[XENO Design System](https://github.com/JondriDev/design-system)** | First-contact design language — deep-field palette, holographic glass, a living network. The source of truth for every app. | HTML · CSS · Canvas | **Live** |
-| 🇮🇩 **[Aplikasi AI Indonesia](https://github.com/JondriDev/aplikasi-ai-indonesia)** | 26 AI-powered apps in one Android super-app — finance, dictionary, vocab, calendar, notes, messaging, AI agent, and more. | Flutter · SQLite | In development |
-| 📟 **[Mesin](https://github.com/JondriDev/mesin)** | A terminal emulator built from first principles — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas cell renderer, 256-color + true color. | Kotlin · C | In development |
+| 🇮🇩 **[Aplikasi AI Indonesia](https://github.com/JondriDev/aplikasi-ai-indonesia)** | The Empire, branded for Indonesia — the same 26-instrument web super-app, bilingual EN/ID, on-device. | HTML · CSS · JS | **Live** |
+| 📟 **[Mesin](https://github.com/JondriDev/mesin)** | A terminal emulator built from first principles — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas cell renderer, 256-color + true color. Ships a web demo too. | Kotlin · C | **Live** |
 | 🜂 **Cakra** | The in-app AI agent (OpenManus / NVIDIA NIM backend), reachable from the super-app over the local mesh. | Dart · SSE | Prototype |
 
 > Build artifacts (APKs) ship from each repo's **Actions** tab.
