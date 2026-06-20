@@ -32,8 +32,8 @@ graph TD
 ```
 
 Every node speaks the same visual language and reports to the same core. The
-design system is the single source of truth — its tokens flow into the Flutter
-app and its palette into the terminal.
+design system is the single source of truth — its tokens flow into the web
+super-app and its palette into the terminal.
 
 ---
 
@@ -42,8 +42,8 @@ app and its palette into the terminal.
 | Node | What it is | Stack | Status |
 |------|-----------|-------|--------|
 | 🎨 **[XENO Design System](https://github.com/JondriDev/design-system)** | First-contact design language — deep-field palette, holographic glass, a living network. The source of truth for every app. | HTML · CSS · Canvas | **Live** |
-| 🇮🇩 **[Aplikasi AI Indonesia](https://github.com/JondriDev/aplikasi-ai-indonesia)** | 26 AI-powered apps in one Android super-app — finance, dictionary, vocab, calendar, notes, messaging, AI agent, and more. | Flutter · SQLite | In development |
-| 📟 **[Mesin](https://github.com/JondriDev/mesin)** | A terminal emulator built from first principles — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas cell renderer, 256-color + true color. | Kotlin · C | In development |
+| 🇮🇩 **[Aplikasi AI Indonesia · The Empire](https://github.com/JondriDev/the-empire)** | 26 instruments in one installable web super-app — finance, dictionary, vocab, calendar, notes, messaging, AI agent, and more. Pure web, no backend; data stays on-device. | HTML · CSS · Canvas | **Live** |
+| 📟 **[Mesin](https://github.com/JondriDev/terminal)** | A terminal emulator built from first principles — raw PTY via JNI, custom ANSI/VT100 state machine, Canvas cell renderer, 256-color + true color. Native Android + installable web build. | Kotlin · C | **Live** |
 | 🜂 **Cakra** | The in-app AI agent (OpenManus / NVIDIA NIM backend), reachable from the super-app over the local mesh. | Dart · SSE | Prototype |
 
 > Build artifacts (APKs) ship from each repo's **Actions** tab.
